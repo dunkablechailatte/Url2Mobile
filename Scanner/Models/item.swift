@@ -16,8 +16,5 @@ class item {
     init(url: String, id: UUID = UUID()) {
         self.url = url
         self.id = id
-    }
-    
-    
-    
+    }   
 }

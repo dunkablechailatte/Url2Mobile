@@ -19,16 +19,9 @@ struct HomeView: View {
     @State private  var urlString : String = ""
     var body: some View {
         NavigationStack {
-          
                 VStack{
-                  
-                        
                         ListView(filterString : filter).searchable(text: $filter , prompt: "Search your List")
-                    
-                    
                 }.navigationTitle("URL2Mobile")
-        
-           
             .toolbar(){
                 ToolbarItemGroup(placement: .topBarTrailing){
                     Button{
@@ -43,7 +36,6 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar){
                     Button {
-                       
                       createNewItem = true
                     } label: {
                         Circle()
@@ -67,8 +59,7 @@ struct HomeView: View {
                     dismiss()
                     urlString = ""
                 }
-.disabled(urlString.isEmpty)
-                
+            .disabled(urlString.isEmpty)
                 Button("Cancel") {
                        dismiss()  // Dismiss the alert when "Cancel" is clicked
                    }
@@ -77,10 +68,8 @@ struct HomeView: View {
               //  AddNewLinkView()
                 //    .presentationDetents([.medium])
           //  }
-            
         }.navigationTitle("URL2MObile")
     }
-    
 }
 
 

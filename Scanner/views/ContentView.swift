@@ -24,81 +24,54 @@ struct ContentView: View {
     @State private var isPressed = false
     func getLatestTranscript() -> String?  {
     var urlString: String? = ""
-        
-
        for item in vm.savedItems {
         if case .text(let text) = item {
           urlString = text.transcript
-          
             break
-           
-            
         }
-            
-            
       }
-    
-        
-    
-      
-       
-   
         return urlString
-    
-        
     }
    
-    
-  
-   
     private var mainView: some View {
-    DataScannerView(recognisedItem: $vm.recognizedItems, recognizedDataType: vm.recognizeDataType)
-        
+        DataScannerView(recognisedItem: $vm.recognizedItems, recognizedDataType: vm.recognizeDataType)
     }
     
     var body: some View {
         switch vm.dataScannerAcsessStatus{
-        case .scannerAvailable: 
-            
+        case .scannerAvailable:
             NavigationStack {
                 VStack{
-                    mainView
+                    Spacer()
                     VStack{
-                        if let  latestTranscript = !vm.savedItems.isEmpty ? getLatestTranscript() : "No Text In Scanner"{
+                        Text("Tap on Url to select")
+                    }
+                    mainView
+                    Spacer()
+                    VStack{
+                        if let  latestTranscript = !vm.savedItems.isEmpty ? getLatestTranscript() : "No URLs detected yet"{
                              Text("\(latestTranscript)")
                            }
-                       
-                      
-                        
                         Button{
                             if  !getLatestTranscript()!.isEmpty {
-                                let newItem = item(url: getLatestTranscript() ?? "ww.hassan.com")
+                                let newItem = item(url: getLatestTranscript() ?? "ww.origen.pk")
                                 isPressed.toggle()
                                       withAnimation {
                                         isPressed.toggle()
                                       }
                                     context.insert(newItem)
                                 vm.clearSavedItems()
-                                
-                               
-                                
+
                                 do {
                                   try context.save()
-                                  print("Item saved successfully")
+//                                  print("Item saved successfully")
                                     vm.checkHasAdded()
                                     print(vm.hasAdded)
                                     print(getLatestTranscript())
-                                    
-                                    
                                 } catch {
-                                   
                                   print("Error saving item: \(error.localizedDescription)")
-                                   
                                 }
-                                                       }
-                           
-                          
-                          
+                               }
                             dismiss()
                         }label: {
                             ZStack{
@@ -114,25 +87,18 @@ struct ContentView: View {
                                        .animation(.easeOut, value: 0.3)
                             }
                         }.disabled(isDisabled)
-                       
-                       
                     }
-                    
                 }
             }
             
-            
         case .cameraNotAvailable: Text("Your device does not have a camera")
         case .scannerNotAvailable: Button("Hey"){
-            let newItem = item(url: "www.hassan.com")
+            let newItem = item(url: "www.origen.pk")
             context.insert(newItem)
-         
         }
         case .cameraAccessNotGranted: Text("Please provide access to the camera in setting")
         case .notDetermined: Text("Requesting camera Access")
         }
-        
-
     }
 }
 

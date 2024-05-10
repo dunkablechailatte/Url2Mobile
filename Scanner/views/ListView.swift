@@ -15,11 +15,8 @@ struct ListView: View {
     @State private var selectedItem: item?
     @State private var showQRCodeSheet = false
     @State private var hasShownAlertThisVisit = false
-      @State private var showConfirmation = false
-   
-    
+    @State private var showConfirmation = false
     @Query private var itemsList: [item]
-    
     
     init(filterString: String){
         let predicate = #Predicate<item> {
@@ -27,19 +24,8 @@ struct ListView: View {
         }
         _itemsList = Query(filter: predicate, sort: \item.date ,  order: .reverse)
     }
-      
-     
-
-      @State private var renderedImage: Image?
-     
-     
-     
-    
-     
-     
-    
+    @State private var renderedImage: Image?
     @EnvironmentObject var vm: AppViewModel
-    
    
     var body: some View {
         Group {
@@ -50,26 +36,17 @@ struct ListView: View {
                         VStack{
                             Image(systemName: "folder").padding(.bottom , 12).foregroundStyle(.secondary)
                             Text("No Urls Found").foregroundStyle(.secondary)
-                           
-                                
                         }
-                        
                     }
                 }
-                    
-               
-                
-            }else {
+            } else {
                 List {
                   ForEach(itemsList) { item in
                     HStack {
                       Text(item.url).font(.body)
                             .lineLimit(1) // Limit the number of lines displayed
-                          
                       Spacer()
                       Button(action: {
-                          
-                          
                         if !hasShownAlertThisVisit { // Check if alert shown this visit
                           selectedItem = item
                           showConfirmation = true
@@ -78,8 +55,6 @@ struct ListView: View {
                             showQRCodeSheet = true
                             selectedItem = item
                         }
-                          
-                          
                       }) {
                         Image(systemName: "square.and.arrow.up")
                           .resizable()
@@ -102,55 +77,30 @@ struct ListView: View {
                     }
                   })
                 }
-
-                
                 .navigationTitle("URL2Mobile")
-                
-               
-            
-                
                 .sheet(isPresented: $showQRCodeSheet) {
                   if let item = selectedItem {
                       VStack {
                           let renderer = ImageRenderer(content: sheetView(sItem: item)).uiImage
-                          
-                          
-                          
                           sheetView(sItem: item).padding(.horizontal)
                           Spacer()
-                          
                           ShareLink("Share QR Code",
-                                            item: Image(uiImage: renderer ?? UIImage()),
-                                            subject: Text("Share QR Code for \(item.url)"),
-                                            message: Text("Share QR Code for \(item.url)"),
-                                            preview:
-                                              SharePreview(item.url, image: Image(uiImage: renderer ?? UIImage()))
-                                             
-                                       ) .buttonStyle(.borderedProminent)
-                                         .tint(.blue)
-                                         .foregroundColor(.white)
-                                         .font(.system(size: 18, weight: .semibold))
-                                         .frame(maxWidth: .infinity)
-                                         .cornerRadius(10)
-                                         .padding(.vertical)
-                                         
-                          
+                                item: Image(uiImage: renderer ?? UIImage()),
+                                subject: Text("Share QR Code for \(item.url)"),
+                                message: Text("Share QR Code for \(item.url)"),
+                                preview:
+                              SharePreview(item.url, image: Image(uiImage: renderer ?? UIImage()))
+                           ) .buttonStyle(.borderedProminent)
+                             .tint(.blue)
+                             .foregroundColor(.white)
+                             .font(.system(size: 18, weight: .semibold))
+                             .frame(maxWidth: .infinity)
+                             .cornerRadius(10)
+                             .padding(.vertical)
                           Spacer()
-
-                          
-                          
-                        
-                          
-                          
-                          
                       }.presentationDetents([.medium])
-                        
-                        
-                             
-                          
-                  }
-                          
-                }
+                      }
+                    }
                   }
                 }
                 .alert(isPresented: $showConfirmation) {
@@ -162,24 +112,9 @@ struct ListView: View {
                     },
                     secondaryButton: .cancel()
                   )
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
             }
         }
-    
-   
-    
+
     struct sheetView: View {
       let sItem: item
         let Context = CIContext()
@@ -195,40 +130,22 @@ struct ListView: View {
             return UIImage(systemName: "xmark.circle") ?? UIImage()
         }
       var body: some View {
-    
-       
-
           VStack {
             Text(sItem.url)
               .font(.title)
               .padding(.top)
-
             ZStack {
               RoundedRectangle(cornerRadius: 10)
                 .fill(Color.white)
                 .shadow(radius: 5) // Optional shadow effect
-
               Image(uiImage: generateQrImage(urlString: sItem.url) ?? UIImage())
                 .interpolation(.none)
                 .resizable()
                 .frame(width: 200, height: 200)
                 .padding()
             }
-
             Spacer()
-
-           
-            
           }
-      
-      }
+          }
+        }
     }
-
-    
-    
-    
-    
-    }
-
-
-

@@ -40,14 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F10A6972B91E39300EBA58B /* Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F10A6972B91E39300EBA58B /* Url2Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Url2Mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F10A69A2B91E39300EBA58B /* ScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerApp.swift; sourceTree = "<group>"; };
 		2F10A69C2B91E39300EBA58B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2F10A69E2B91E39600EBA58B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F10A6A12B91E39600EBA58B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2F10A6A72B91E39600EBA58B /* ScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F10A6A72B91E39600EBA58B /* Url2MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Url2MobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F10A6AB2B91E39600EBA58B /* ScannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerTests.swift; sourceTree = "<group>"; };
-		2F10A6B12B91E39600EBA58B /* ScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F10A6B12B91E39600EBA58B /* Url2MobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Url2MobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F10A6B52B91E39600EBA58B /* ScannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerUITests.swift; sourceTree = "<group>"; };
 		2F10A6B72B91E39600EBA58B /* ScannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2F10A6C62B91EA1C00EBA58B /* viewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewController.swift; sourceTree = "<group>"; };
@@ -96,9 +96,9 @@
 		2F10A6982B91E39300EBA58B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F10A6972B91E39300EBA58B /* Scanner.app */,
-				2F10A6A72B91E39600EBA58B /* ScannerTests.xctest */,
-				2F10A6B12B91E39600EBA58B /* ScannerUITests.xctest */,
+				2F10A6972B91E39300EBA58B /* Url2Mobile.app */,
+				2F10A6A72B91E39600EBA58B /* Url2MobileTests.xctest */,
+				2F10A6B12B91E39600EBA58B /* Url2MobileUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,9 +172,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2F10A6962B91E39300EBA58B /* Scanner */ = {
+		2F10A6962B91E39300EBA58B /* Url2Mobile */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F10A6BB2B91E39600EBA58B /* Build configuration list for PBXNativeTarget "Scanner" */;
+			buildConfigurationList = 2F10A6BB2B91E39600EBA58B /* Build configuration list for PBXNativeTarget "Url2Mobile" */;
 			buildPhases = (
 				2F10A6932B91E39300EBA58B /* Sources */,
 				2F10A6942B91E39300EBA58B /* Frameworks */,
@@ -184,14 +184,14 @@
 			);
 			dependencies = (
 			);
-			name = Scanner;
+			name = Url2Mobile;
 			productName = Scanner;
-			productReference = 2F10A6972B91E39300EBA58B /* Scanner.app */;
+			productReference = 2F10A6972B91E39300EBA58B /* Url2Mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2F10A6A62B91E39600EBA58B /* ScannerTests */ = {
+		2F10A6A62B91E39600EBA58B /* Url2MobileTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F10A6BE2B91E39600EBA58B /* Build configuration list for PBXNativeTarget "ScannerTests" */;
+			buildConfigurationList = 2F10A6BE2B91E39600EBA58B /* Build configuration list for PBXNativeTarget "Url2MobileTests" */;
 			buildPhases = (
 				2F10A6A32B91E39600EBA58B /* Sources */,
 				2F10A6A42B91E39600EBA58B /* Frameworks */,
@@ -202,14 +202,14 @@
 			dependencies = (
 				2F10A6A92B91E39600EBA58B /* PBXTargetDependency */,
 			);
-			name = ScannerTests;
+			name = Url2MobileTests;
 			productName = ScannerTests;
-			productReference = 2F10A6A72B91E39600EBA58B /* ScannerTests.xctest */;
+			productReference = 2F10A6A72B91E39600EBA58B /* Url2MobileTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2F10A6B02B91E39600EBA58B /* ScannerUITests */ = {
+		2F10A6B02B91E39600EBA58B /* Url2MobileUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F10A6C12B91E39600EBA58B /* Build configuration list for PBXNativeTarget "ScannerUITests" */;
+			buildConfigurationList = 2F10A6C12B91E39600EBA58B /* Build configuration list for PBXNativeTarget "Url2MobileUITests" */;
 			buildPhases = (
 				2F10A6AD2B91E39600EBA58B /* Sources */,
 				2F10A6AE2B91E39600EBA58B /* Frameworks */,
@@ -220,9 +220,9 @@
 			dependencies = (
 				2F10A6B32B91E39600EBA58B /* PBXTargetDependency */,
 			);
-			name = ScannerUITests;
+			name = Url2MobileUITests;
 			productName = ScannerUITests;
-			productReference = 2F10A6B12B91E39600EBA58B /* ScannerUITests.xctest */;
+			productReference = 2F10A6B12B91E39600EBA58B /* Url2MobileUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +248,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2F10A6922B91E39300EBA58B /* Build configuration list for PBXProject "Scanner" */;
+			buildConfigurationList = 2F10A6922B91E39300EBA58B /* Build configuration list for PBXProject "Url2Mobile" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -261,9 +261,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2F10A6962B91E39300EBA58B /* Scanner */,
-				2F10A6A62B91E39600EBA58B /* ScannerTests */,
-				2F10A6B02B91E39600EBA58B /* ScannerUITests */,
+				2F10A6962B91E39300EBA58B /* Url2Mobile */,
+				2F10A6A62B91E39600EBA58B /* Url2MobileTests */,
+				2F10A6B02B91E39600EBA58B /* Url2MobileUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -332,12 +332,12 @@
 /* Begin PBXTargetDependency section */
 		2F10A6A92B91E39600EBA58B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2F10A6962B91E39300EBA58B /* Scanner */;
+			target = 2F10A6962B91E39300EBA58B /* Url2Mobile */;
 			targetProxy = 2F10A6A82B91E39600EBA58B /* PBXContainerItemProxy */;
 		};
 		2F10A6B32B91E39600EBA58B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2F10A6962B91E39300EBA58B /* Scanner */;
+			target = 2F10A6962B91E39300EBA58B /* Url2Mobile */;
 			targetProxy = 2F10A6B22B91E39600EBA58B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -469,11 +469,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Scanner/Preview Content\"";
-				DEVELOPMENT_TEAM = 9798R9N4CA;
+				DEVELOPMENT_TEAM = RPV4G9Y6MB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Url2Mobile;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "The app need camera access to scan barcode";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -486,9 +488,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chailatte.scanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartcrop.sendtomobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,11 +507,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Scanner/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RPV4G9Y6MB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Url2Mobile;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "The app need camera access to scan barcode";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -519,9 +526,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hassan.scanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartcrop.sendtomobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -544,7 +554,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scanner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Scanner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Url2Mobile.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Url2Mobile";
 			};
 			name = Debug;
 		};
@@ -564,7 +574,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scanner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Scanner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Url2Mobile.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Url2Mobile";
 			};
 			name = Release;
 		};
@@ -608,7 +618,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2F10A6922B91E39300EBA58B /* Build configuration list for PBXProject "Scanner" */ = {
+		2F10A6922B91E39300EBA58B /* Build configuration list for PBXProject "Url2Mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F10A6B92B91E39600EBA58B /* Debug */,
@@ -617,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F10A6BB2B91E39600EBA58B /* Build configuration list for PBXNativeTarget "Scanner" */ = {
+		2F10A6BB2B91E39600EBA58B /* Build configuration list for PBXNativeTarget "Url2Mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F10A6BC2B91E39600EBA58B /* Debug */,
@@ -626,7 +636,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F10A6BE2B91E39600EBA58B /* Build configuration list for PBXNativeTarget "ScannerTests" */ = {
+		2F10A6BE2B91E39600EBA58B /* Build configuration list for PBXNativeTarget "Url2MobileTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F10A6BF2B91E39600EBA58B /* Debug */,
@@ -635,7 +645,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F10A6C12B91E39600EBA58B /* Build configuration list for PBXNativeTarget "ScannerUITests" */ = {
+		2F10A6C12B91E39600EBA58B /* Build configuration list for PBXNativeTarget "Url2MobileUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F10A6C22B91E39600EBA58B /* Debug */,
