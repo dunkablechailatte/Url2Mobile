@@ -10,9 +10,9 @@ import Foundation
 import SwiftUI
 import VisionKit
 import AVFoundation
-enum scanType {
-    
-    case text
+
+enum ScanType: String {
+    case  text
 }
 
 
@@ -25,13 +25,46 @@ enum dataScannerAccessType{
 }
 @MainActor
 final class AppViewModel : ObservableObject {
-    
+    @Published var textContentType: DataScannerViewController.TextContentType? = .URL
     @Published var savedItems: [RecognizedItem] = []
-    @Published var textContenType: DataScannerViewController.TextContentType?
+    @Published var recognizesMultipleItems = false
     @Published var hasAdded = true
+    
     
     private let recentSavedItemsQueue = RecentValuesQueue<RecognizedItem>(maxSize: 1) // Limit to 1 item
    
+    
+    
+    
+    @Published var authToken: String = "" // Store the token here
+        
+       
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    private var contentType: String {
+        if textContentType == .URL {
+            return "url"
+        }else if textContentType == .telephoneNumber {
+            return "Phone Number"}
+        else if textContentType == .emailAddress{
+            return "Email"
+        }
+        else {
+            return "Text"
+        }
+    }
+    
+    
+    
+    
    
     @Published var recognizedItems: [RecognizedItem] = [] {
            didSet {
@@ -40,6 +73,41 @@ final class AppViewModel : ObservableObject {
            }
        }
     
+    
+    @Published var scanType: ScanType = .text
+      
+    var recognizedDataType: DataScannerViewController.RecognizedDataType {
+        .text(textContentType: textContentType)
+     }
+      
+    
+    var headerText: String {
+            if recognizedItems.isEmpty {
+                return "Scanning \(contentType)"
+            } else {
+                return "Recognized \(recognizedItems.count) item(s)"
+            }
+        }
+        
+          var dataScannerViewId: Int {
+            var hasher = Hasher()
+            hasher.combine(scanType)
+            hasher.combine(recognizesMultipleItems)
+            if let textContentType {
+                hasher.combine(textContentType)
+            }
+            return hasher.finalize()
+        }
+    
+    
+    
+
+    
+     
+      
+     var recognizeDataType: DataScannerViewController.RecognizedDataType {
+         .text(textContentType: textContentType)
+      }
     // Function to save the recognized items (replace with your actual saving logic)
     func saveRecognizedItems(_ items: [RecognizedItem]) {
         savedItems.append(contentsOf: items)
@@ -47,7 +115,15 @@ final class AppViewModel : ObservableObject {
         savedItems = Array(savedItems.suffix(1))
        
        
-        
+        var dataScannerViewId: Int {
+               var hasher = Hasher()
+               hasher.combine(scanType)
+               hasher.combine(recognizesMultipleItems)
+               if let textContentType {
+                   hasher.combine(textContentType)
+               }
+               return hasher.finalize()
+           }
         
         }
     
@@ -62,7 +138,40 @@ final class AppViewModel : ObservableObject {
         }
     
     
-
+    func openContent(_ content: String) {
+        // URL
+        if let url = URL(string: content) {
+            openURLInDefaultBrowser(content)
+        }
+        
+        // Phone number
+        let phoneNumberSet = CharacterSet(charactersIn: "+0123456789")
+        if content.rangeOfCharacter(from: phoneNumberSet.inverted) == nil {
+            if let phoneURL = URL(string: "tel://\(content)") {
+                UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+            }
+            return
+        }
+        
+        // Email
+        if content.contains("@") {
+            if let emailURL = URL(string: "mailto:\(content)") {
+                UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
+            }
+            return
+        }
+        
+        // WhatsApp
+        if content.lowercased().contains("whatsapp") {
+            if let whatsappURL = URL(string: "https://api.whatsapp.com/send?phone=\(content)") {
+                UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
+            }
+            return
+        }
+        
+        // If none of the above conditions are met
+        print("Unable to open content: \(content)")
+    }
     
     func openURLInDefaultBrowser(_ urlString: String) {
         guard let url = URL(string: urlString) else {
@@ -89,16 +198,11 @@ final class AppViewModel : ObservableObject {
         }
     }
     
-    @Published var scanType: scanType = .text
+
     
     
     
-    @Published var recognizesMultipleItems = false
-    
-   var recognizeDataType: DataScannerViewController.RecognizedDataType {
-       .text(textContentType: .URL)
-    }
-    
+   
     
     @Published var dataScannerAcsessStatus = dataScannerAccessType.notDetermined
     private var isScannerAvailable : Bool {
@@ -128,7 +232,9 @@ final class AppViewModel : ObservableObject {
         
         
     }
-    
+    func getToken() -> String? {
+        return UserDefaults.standard.string(forKey: "tokenKey")
+    }
 }
 class RecentValuesQueue<T> {
   private var queue: [T] = []

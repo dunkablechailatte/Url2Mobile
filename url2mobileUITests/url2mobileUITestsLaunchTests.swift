@@ -1,13 +1,13 @@
 //
-//  ScannerUITestsLaunchTests.swift
-//  ScannerUITests
+//  url2mobileUITestsLaunchTests.swift
+//  url2mobileUITests
 //
-//  Created by Hassan Ali on 01/03/2024.
+//  Created by Hassan Ali on 10/08/2024.
 //
 
 import XCTest
 
-final class ScannerUITestsLaunchTests: XCTestCase {
+final class url2mobileUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

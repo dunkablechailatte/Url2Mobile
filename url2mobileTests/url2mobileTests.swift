@@ -1,14 +1,14 @@
 //
-//  ScannerTests.swift
-//  ScannerTests
+//  url2mobileTests.swift
+//  url2mobileTests
 //
-//  Created by Hassan Ali on 01/03/2024.
+//  Created by Hassan Ali on 10/08/2024.
 //
 
 import XCTest
-@testable import Scanner
+@testable import url2mobile
 
-final class ScannerTests: XCTestCase {
+final class url2mobileTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
